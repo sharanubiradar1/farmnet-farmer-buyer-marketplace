@@ -1,0 +1,372 @@
+.bid-product-info {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--light);
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.bid-product-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  flex-shrink: 0;
+  border: 2px solid var(--border);
+}
+
+.bid-product-info h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.current-price,
+.min-increment {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.current-price {
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.current-price svg,
+.min-increment svg {
+  font-size: 0.875rem;
+}
+
+.min-increment {
+  color: var(--text-light);
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 0.75rem;
+  color: var(--text-light);
+  pointer-events: none;
+  z-index: 1;
+  font-size: 1rem;
+}
+
+.input-with-padding {
+  padding-left: 2.25rem;
+}
+
+/* Bid Amount Input Styling */
+.bid-amount-section {
+  background-color: var(--primary-light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--primary);
+}
+
+.bid-amount-section .input {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.bid-amount-section .input:focus {
+  border-color: var(--primary-dark);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+/* Form Elements in Modal */
+.bid-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Delivery and Payment Options */
+.option-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.option-button {
+  padding: 0.75rem;
+  border: 2px solid var(--border);
+  background-color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.option-button:hover {
+  border-color: var(--primary);
+  background-color: var(--primary-light);
+}
+
+.option-button.selected {
+  border-color: var(--primary);
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Bid Summary */
+.bid-summary {
+  background-color: var(--light);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.bid-summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.bid-summary-row:last-child {
+  border-bottom: none;
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--primary);
+  padding-top: 0.75rem;
+}
+
+.bid-summary-label {
+  color: var(--text-light);
+}
+
+.bid-summary-value {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+/* Modal Specific Overrides */
+.modal.bid-modal {
+  max-width: 550px;
+}
+
+.bid-modal .modal-body {
+  max-height: calc(90vh - 180px);
+  overflow-y: auto;
+}
+
+.bid-modal .modal-footer {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.bid-modal .modal-footer .btn {
+  min-width: 120px;
+}
+
+/* Success Animation */
+@keyframes bidSuccess {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.bid-success-animation {
+  animation: bidSuccess 0.3s ease-in-out;
+}
+
+/* Loading State */
+.bid-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.bid-loading-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+/* Validation Messages */
+.bid-validation-message {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background-color: #fef3c7;
+  border: 1px solid #f59e0b;
+  border-radius: 0.5rem;
+  color: #92400e;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.bid-validation-message.error {
+  background-color: #fee2e2;
+  border-color: #ef4444;
+  color: #991b1b;
+}
+
+.bid-validation-message.success {
+  background-color: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--primary-dark);
+}
+
+/* Bid Increment Buttons */
+.bid-quick-increments {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.bid-increment-btn {
+  flex: 1;
+  padding: 0.5rem;
+  background-color: white;
+  border: 1px solid var(--border);
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--text);
+}
+
+.bid-increment-btn:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--primary-dark);
+}
+
+/* Bid History Preview */
+.bid-history-preview {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--light);
+  border-radius: 0.5rem;
+}
+
+.bid-history-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.bid-history-item:last-child {
+  border-bottom: none;
+}
+
+.bid-history-amount {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.bid-history-time {
+  font-size: 0.875rem;
+  color: var(--text-light);
+}
+
+/* Responsive Styles */
+@media (max-width: 640px) {
+  .bid-product-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bid-product-image {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+  }
+
+  .modal.bid-modal {
+    margin: 0.5rem;
+    max-width: calc(100% - 1rem);
+  }
+
+  .bid-modal .modal-body {
+    max-height: calc(100vh - 200px);
+  }
+
+  .option-group {
+    grid-template-columns: 1fr;
+  }
+
+  .bid-quick-increments {
+    flex-direction: column;
+  }
+
+  .bid-modal .modal-footer {
+    flex-direction: column-reverse;
+  }
+
+  .bid-modal .modal-footer .btn {
+    width: 100%;
+  }
+
+  .input-with-padding {
+    font-size: 1rem;
+  }
+
+  .bid-amount-section .input {
+    font-size: 1.125rem;
+  }
+}
+
+/* Accessibility */
+.bid-modal .input:focus,
+.bid-modal .select:focus,
+.bid-modal .textarea:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .bid-modal {
+    display: none;
+  }
+}
+
+/* Dark Mode Support (Optional) */
+@media (prefers-color-scheme: dark) {
+  .bid-product-info {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .option-button {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .option-button:hover {
+    background-color: rgba(16, 185, 129, 0.2);
+  }
+}
