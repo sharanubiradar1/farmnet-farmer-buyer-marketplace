@@ -119,7 +119,13 @@ const FarmerDashboard = ({ user, onLogout }) => {
     e.preventDefault();
     
     // Validate required fields
-    if (!formData.name || !formData.description || !formData.quantity.value || !formData.basePrice) {
+    if (
+  !formData.name ||
+  !formData.description ||
+  !formData.quantity.value ||
+  !formData.basePrice ||
+  !formData.currentPrice
+)  {
       toast.error('Please fill all required fields: Name, Description, Quantity, and Price');
       return;
     }
