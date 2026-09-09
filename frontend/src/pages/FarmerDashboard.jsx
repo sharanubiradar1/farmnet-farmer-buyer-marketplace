@@ -24,17 +24,18 @@ const FarmerDashboard = ({ user, onLogout }) => {
       pincode: user.address?.pincode || '',
     }
   });
-  const [formData, setFormData] = useState({
-    name: '',
-    category: 'vegetables',
-    description: '',
-    quantity: { value: '', unit: 'kg' },
-    basePrice: '',
-    minimumBidIncrement: 10,
-    harvestDate: '',
-    biddingEndTime: '',
-    images: null,
-  });
+ const [formData, setFormData] = useState({
+  name: '',
+  category: 'vegetables',
+  description: '',
+  quantity: { value: '', unit: 'kg' },
+  basePrice: '',
+  currentPrice: '',
+  minimumBidIncrement: 10,
+  harvestDate: '',
+  biddingEndTime: '',
+  images: null,
+});
 
   useEffect(() => {
     fetchDashboardData();
