@@ -425,6 +425,17 @@ const FarmerDashboard = ({ user, onLogout }) => {
                   <input type="number" name="basePrice" className="input" value={formData.basePrice} onChange={handleChange} required />
                 </div>
                 <div className="form-group">
+  <label className="form-label required">Current Price (₹)</label>
+  <input
+    type="number"
+    name="currentPrice"
+    className="input"
+    value={formData.currentPrice}
+    onChange={handleChange}
+    required
+  />
+</div>
+                <div className="form-group">
                   <label className="form-label required">Harvest Date</label>
                   <input type="date" name="harvestDate" className="input" value={formData.harvestDate} onChange={handleChange} required />
                 </div>
