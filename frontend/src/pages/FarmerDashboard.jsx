@@ -167,6 +167,7 @@ const FarmerDashboard = ({ user, onLogout }) => {
           description: '',
           quantity: { value: '', unit: 'kg' },
           basePrice: '',
+          currentPrice: '',
           minimumBidIncrement: 10,
           harvestDate: '',
           biddingEndTime: '',
